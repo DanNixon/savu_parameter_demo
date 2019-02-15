@@ -1,7 +1,7 @@
 import unittest
 import voluptuous as vol
 
-from parameter import Parameter
+from .parameter import Parameter
 
 
 class ParameterTest(unittest.TestCase):

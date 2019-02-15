@@ -1,2 +1,2 @@
-from parameter import Parameter
-from parameters import *
+from .parameter import Parameter
+from .parameters import *

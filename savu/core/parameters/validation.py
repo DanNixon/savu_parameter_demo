@@ -1,3 +1,4 @@
+import sys
 import voluptuous as vol
 
 
@@ -14,4 +15,4 @@ def of_length(thing, min_len=None, max_len=None):
 
 
 def string():
-    return vol.Schema(vol.Any(str, unicode))
+    return vol.Schema(vol.Any(str, unicode) if sys.version_info.major == 2 else str)

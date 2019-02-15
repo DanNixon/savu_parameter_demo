@@ -1,8 +1,8 @@
 import unittest
 import voluptuous as vol
 
-import parameters
-from plugin import (
+from . import parameters
+from .plugin import (
     Plugin,
     NoSuchParameterError,
     DuplicateParameterNameError

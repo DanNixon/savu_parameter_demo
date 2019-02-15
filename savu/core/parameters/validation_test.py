@@ -1,7 +1,7 @@
 import unittest
 import voluptuous as vol
 
-import validation as val
+from . import validation as val
 
 
 class NullableTest(unittest.TestCase):

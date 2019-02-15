@@ -1,6 +1,6 @@
 import unittest
 
-from pattern import Pattern
+from .pattern import Pattern
 
 
 class PatternParameterTest(unittest.TestCase):
