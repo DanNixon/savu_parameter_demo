@@ -1,6 +1,6 @@
 import voluptuous as vol
 
-from savu.core.parameters import Parameter
+from savu.core.parameters import Parameter, validation
 
 
 class Pattern(Parameter):
@@ -10,8 +10,8 @@ class Pattern(Parameter):
             name="pattern",
             description="Data slice pattern",
             default="PROJECTION",
-            schema=vol.Schema(vol.In([
+            schema=validation.enum([
                 "PROJECTION",
                 "SINOGRAM",
-            ]))
+            ])
         )
