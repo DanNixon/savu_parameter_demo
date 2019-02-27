@@ -1,5 +1,4 @@
 import unittest
-import voluptuous as vol
 
 from . import parameters
 from .plugin import (
@@ -52,6 +51,6 @@ class PluginTest(unittest.TestCase):
     def test_set_value_invalid(self):
         p = TestPlugin1()
         self.assertEqual("PROJECTION", p.parameter_value("pattern"))
-        with self.assertRaises(vol.MultipleInvalid):
+        with self.assertRaises(parameters.SchemaValidationError):
             p.set_parameter("pattern", "NOT A THING")
         self.assertEqual("PROJECTION", p.parameter_value("pattern"))

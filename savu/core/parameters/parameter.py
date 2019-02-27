@@ -1,13 +1,15 @@
+from savu.core.parameters import Schema
+
+
 class Parameter(object):
 
-    def __init__(self, name, description, default, schema=None):
+    def __init__(self, name, description, default, schema=Schema()):
         self._name = name
         self._description = description
         self._schema = schema
 
         # Validate and set default value
-        if self._schema is not None:
-            self._schema(default)
+        self._schema.validate(default)
         self._default = default
         self._value = default
 
@@ -28,7 +30,7 @@ class Parameter(object):
         return self._value
 
     def set_value(self, value):
-        if self._schema is not None:
-            # Validate new value before setting it
-            self._schema(value)
+        # Validate new value before setting it
+        self._schema.validate(value)
+
         self._value = value

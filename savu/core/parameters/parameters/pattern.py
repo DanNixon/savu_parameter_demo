@@ -1,6 +1,4 @@
-import voluptuous as vol
-
-from savu.core.parameters import Parameter, validation
+from savu.core.parameters import Parameter, schemas
 
 
 class Pattern(Parameter):
@@ -10,7 +8,7 @@ class Pattern(Parameter):
             name="pattern",
             description="Data slice pattern",
             default="PROJECTION",
-            schema=validation.enum([
+            schema=schemas.Enum([
                 "PROJECTION",
                 "SINOGRAM",
             ])
