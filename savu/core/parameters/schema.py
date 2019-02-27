@@ -17,3 +17,9 @@ class Schema(object):
         """
         if not self._nullable and value is None:
             raise SchemaValidationError('Value is None but parameter is not nullable')
+
+    def value_help_str(self):
+        """
+        Gets a help text describing valid values for this schema.
+        """
+        return 'Any value of any type, or None' if self._nullable else 'Any non-None value of any type'
