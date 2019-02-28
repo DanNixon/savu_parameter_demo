@@ -26,8 +26,8 @@ class SchemaTest(unittest.TestCase):
 
     def test_help_text_nullable(self):
         s = Schema(nullable=True)
-        self.assertEquals(s.value_help_str(), 'Any value of any type, or None')
+        self.assertEquals(s.value_help_str, 'Any value of any type, or None')
 
     def test_help_text_not_nullable(self):
         s = Schema(nullable=False)
-        self.assertEquals(s.value_help_str(), 'Any non-None value of any type')
+        self.assertEquals(s.value_help_str, 'Any non-None value of any type')
